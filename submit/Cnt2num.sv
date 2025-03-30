@@ -10,7 +10,7 @@ module Cnt2num #(
     input high_rst,
     //reset signal from higher module
     input low_co,
-    // carry from lower bits counter
+    // carry from lower bits counter, in the bottom level is the add signal itself.
     output co,
     //carry of the entire counter
     output [7:0] cnt
@@ -43,7 +43,7 @@ Cnt #(.BASE(LOW_BASE), .INITIAL(LOW_INIT)) LOW_CNT(
 
 Cnt #(.BASE(HIGH_BASE), .INITIAL(HIGH_INIT)) HIGH_CNT(
     .en(en),
-    .clk(clk),
+    .clk(~clk),
     .rstn(rstn),
     .low_co(low_bits_carry),
     .high_rst(high_rst),
@@ -52,11 +52,12 @@ Cnt #(.BASE(HIGH_BASE), .INITIAL(HIGH_INIT)) HIGH_CNT(
 );
 
 always @(posedge clk or negedge rstn) begin
-    if (low_bits == LOW_CO[3:0] && high_bits == HIGH_CO[3:0] && low_co == 1) begin
-        global_temp_co = 1;
-    end
-    else begin
-        global_temp_co = 0;
+    if (~rstn) begin
+        global_temp_co <= 0;
+    end else if ((low_bits + 1 == LOW_CO[3:0]) && (high_bits == HIGH_CO[3:0])) begin
+        global_temp_co <= 1;
+    end else begin
+        global_temp_co <= 0;
     end
 end
 

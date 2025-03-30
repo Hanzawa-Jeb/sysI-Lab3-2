@@ -27,7 +27,7 @@ always @(posedge clk or negedge rstn) begin
     end else if (high_rst) begin
         cnt <= 0;
         temp_co <= 0;
-    end else if (low_co & en)begin
+    end else if (low_co)begin
         if (cnt == BASE - 1)begin
             cnt <= 0;
             temp_co <= 1;

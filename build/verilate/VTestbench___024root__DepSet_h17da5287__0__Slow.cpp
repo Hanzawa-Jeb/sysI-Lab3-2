@@ -90,7 +90,7 @@ VL_ATTR_COLD void VTestbench___024root___ctor_var_reset(VTestbench___024root* vl
     vlSelf->__Vdly__Testbench__DOT__cnt_24__DOT__high_bits = VL_RAND_RESET_I(4);
     vlSelf->__Vtrigprevexpr___TOP__Testbench__DOT__clk__0 = VL_RAND_RESET_I(1);
     vlSelf->__Vtrigprevexpr___TOP__Testbench__DOT__rstn__0 = VL_RAND_RESET_I(1);
-    for (int __Vi0 = 0; __Vi0 < 5; ++__Vi0) {
+    for (int __Vi0 = 0; __Vi0 < 4; ++__Vi0) {
         vlSelf->__Vm_traceActivity[__Vi0] = 0;
     }
 }

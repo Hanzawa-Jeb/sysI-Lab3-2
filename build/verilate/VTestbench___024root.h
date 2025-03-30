@@ -34,7 +34,7 @@ class alignas(VL_CACHE_LINE_BYTES) VTestbench___024root final : public Verilated
     CData/*0:0*/ __Vtrigprevexpr___TOP__Testbench__DOT__rstn__0;
     CData/*0:0*/ __VactContinue;
     IData/*31:0*/ __VactIterCount;
-    VlUnpacked<CData/*0:0*/, 5> __Vm_traceActivity;
+    VlUnpacked<CData/*0:0*/, 4> __Vm_traceActivity;
     VlDelayScheduler __VdlySched;
     VlTriggerVec<4> __VactTriggered;
     VlTriggerVec<4> __VnbaTriggered;

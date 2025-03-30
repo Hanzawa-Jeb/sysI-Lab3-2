@@ -3,75 +3,75 @@ $timescale 10ps $end
  $scope module $rootio $end
  $upscope $end
  $scope module Testbench $end
-  $var wire 32 3 BASE [31:0] $end
-  $var wire 32 4 INITIAL [31:0] $end
-  $var wire 1 2 clk $end
+  $var wire 32 4 BASE [31:0] $end
+  $var wire 32 5 INITIAL [31:0] $end
+  $var wire 1 . clk $end
   $var wire 1 # rstn $end
   $var wire 1 $ high_rst $end
   $var wire 1 % low_co $end
   $var wire 1 ) co $end
-  $var wire 8 - cnt [7:0] $end
-  $var wire 1 . error $end
+  $var wire 8 / cnt [7:0] $end
+  $var wire 1 * error $end
   $scope module cnt_24 $end
-   $var wire 32 3 BASE [31:0] $end
-   $var wire 32 4 INITIAL [31:0] $end
-   $var wire 1 5 en $end
-   $var wire 1 2 clk $end
+   $var wire 32 4 BASE [31:0] $end
+   $var wire 32 5 INITIAL [31:0] $end
+   $var wire 1 6 en $end
+   $var wire 1 . clk $end
    $var wire 1 # rstn $end
    $var wire 1 $ high_rst $end
    $var wire 1 % low_co $end
    $var wire 1 ) co $end
-   $var wire 8 - cnt [7:0] $end
-   $var wire 32 6 HIGH_BASE [31:0] $end
-   $var wire 32 6 LOW_BASE [31:0] $end
-   $var wire 32 7 HIGH_INIT [31:0] $end
-   $var wire 32 8 LOW_INIT [31:0] $end
-   $var wire 32 9 HIGH_CO [31:0] $end
-   $var wire 32 : LOW_CO [31:0] $end
-   $var wire 1 * low_bits_carry $end
+   $var wire 8 / cnt [7:0] $end
+   $var wire 32 7 HIGH_BASE [31:0] $end
+   $var wire 32 7 LOW_BASE [31:0] $end
+   $var wire 32 8 HIGH_INIT [31:0] $end
+   $var wire 32 9 LOW_INIT [31:0] $end
+   $var wire 32 : HIGH_CO [31:0] $end
+   $var wire 32 ; LOW_CO [31:0] $end
+   $var wire 1 + low_bits_carry $end
    $var wire 1 ) global_temp_co $end
-   $var wire 4 / low_bits [3:0] $end
+   $var wire 4 , low_bits [3:0] $end
    $var wire 4 0 high_bits [3:0] $end
    $scope module HIGH_CNT $end
-    $var wire 32 6 BASE [31:0] $end
-    $var wire 32 7 INITIAL [31:0] $end
-    $var wire 1 5 en $end
-    $var wire 1 2 clk $end
+    $var wire 32 7 BASE [31:0] $end
+    $var wire 32 8 INITIAL [31:0] $end
+    $var wire 1 6 en $end
+    $var wire 1 1 clk $end
     $var wire 1 # rstn $end
-    $var wire 1 * low_co $end
+    $var wire 1 + low_co $end
     $var wire 1 $ high_rst $end
-    $var wire 1 + co $end
+    $var wire 1 2 co $end
     $var wire 4 0 cnt [3:0] $end
-    $var wire 1 + temp_co $end
+    $var wire 1 2 temp_co $end
    $upscope $end
    $scope module LOW_CNT $end
-    $var wire 32 6 BASE [31:0] $end
-    $var wire 32 8 INITIAL [31:0] $end
-    $var wire 1 5 en $end
-    $var wire 1 2 clk $end
+    $var wire 32 7 BASE [31:0] $end
+    $var wire 32 9 INITIAL [31:0] $end
+    $var wire 1 6 en $end
+    $var wire 1 . clk $end
     $var wire 1 # rstn $end
     $var wire 1 % low_co $end
     $var wire 1 $ high_rst $end
-    $var wire 1 * co $end
-    $var wire 4 / cnt [3:0] $end
-    $var wire 1 * temp_co $end
+    $var wire 1 + co $end
+    $var wire 4 , cnt [3:0] $end
+    $var wire 1 + temp_co $end
    $upscope $end
   $upscope $end
   $scope module judge $end
-   $var wire 32 3 BASE [31:0] $end
-   $var wire 32 4 INITIAL [31:0] $end
-   $var wire 1 2 clk $end
+   $var wire 32 4 BASE [31:0] $end
+   $var wire 32 5 INITIAL [31:0] $end
+   $var wire 1 . clk $end
    $var wire 1 # rstn $end
    $var wire 1 $ high_rst $end
    $var wire 1 % low_co $end
    $var wire 1 ) co $end
-   $var wire 8 - cnt [7:0] $end
-   $var wire 1 . error $end
+   $var wire 8 / cnt [7:0] $end
+   $var wire 1 * error $end
    $var wire 32 & param_rstn [31:0] $end
    $var wire 32 ' param_high_rst [31:0] $end
    $var wire 32 ( param_low_co [31:0] $end
-   $var wire 32 , param_co [31:0] $end
-   $var wire 32 1 param_cnt [31:0] $end
+   $var wire 32 - param_co [31:0] $end
+   $var wire 32 3 param_cnt [31:0] $end
   $upscope $end
  $upscope $end
 $enddefinitions $end
@@ -87,71 +87,130 @@ b00000000000000000000000000000001 (
 0)
 0*
 0+
-b00000000000000000000000000000000 ,
-b00000000 -
+b0000 ,
+b00000000000000000000000000000000 -
 0.
-b0000 /
+b00000000 /
 b0000 0
-b00000000000000000000000000000000 1
+11
 02
-b00000000000000000000000000011000 3
-b00000000000000000000000000010000 4
-15
-b00000000000000000000000000001010 6
-b00000000000000000000000000000001 7
-b00000000000000000000000000000110 8
-b00000000000000000000000000000010 9
-b00000000000000000000000000000011 :
+b00000000000000000000000000000000 3
+b00000000000000000000000000011000 4
+b00000000000000000000000000010000 5
+16
+b00000000000000000000000000001010 7
+b00000000000000000000000000000001 8
+b00000000000000000000000000000110 9
+b00000000000000000000000000000010 :
+b00000000000000000000000000000011 ;
 #500
-b00010110 -
-b0110 /
-b0001 0
-b00000000000000000000000000010110 1
-12
+b0110 ,
+1.
+b00000110 /
+01
+b00000000000000000000000000000110 3
 #1000
-02
+0.
+b00010110 /
+b0001 0
+11
+b00000000000000000000000000010110 3
 #1500
-12
+1.
+01
 #2000
 1#
 b00000000000000000000000000000001 &
-02
+0.
+11
 #2500
-b00010111 -
-b0111 /
-b00000000000000000000000000010111 1
-12
-#3000
-02
-#3500
-b00011000 -
-b1000 /
-b00000000000000000000000000011000 1
-12
-#4000
-02
-#4500
-b00011001 -
-b1001 /
-b00000000000000000000000000011001 1
-12
-#5000
-02
-#5500
-1*
-b00010000 -
-b0000 /
-b00000000000000000000000000010000 1
-12
-#6000
-02
-#6500
-0*
-b00100001 -
+b0111 ,
 1.
-b0001 /
+b00010111 /
+01
+b00000000000000000000000000010111 3
+#3000
+0.
+11
+#3500
+b1000 ,
+1.
+b00011000 /
+01
+b00000000000000000000000000011000 3
+#4000
+0.
+11
+#4500
+b1001 ,
+1.
+b00011001 /
+01
+b00000000000000000000000000011001 3
+#5000
+0.
+11
+#5500
+1+
+b0000 ,
+1.
+b00010000 /
+01
+b00000000000000000000000000010000 3
+#6000
+0.
+b00100000 /
 b0010 0
-b00000000000000000000000000100001 1
-12
+11
+b00000000000000000000000000100000 3
+#6500
+0+
+b0001 ,
+1.
+b00100001 /
+01
+b00000000000000000000000000100001 3
 #7000
-02
+0.
+11
+#7500
+b0010 ,
+1.
+b00100010 /
+01
+b00000000000000000000000000100010 3
+#8000
+0.
+11
+#8500
+1)
+b0011 ,
+b00000000000000000000000000000001 -
+1.
+b00100011 /
+01
+b00000000000000000000000000100011 3
+#9000
+0.
+11
+#9500
+0)
+b0100 ,
+b00000000000000000000000000000000 -
+1.
+b00100100 /
+01
+b00000000000000000000000000100100 3
+#10000
+0.
+11
+#10500
+1*
+b0101 ,
+1.
+b00100101 /
+01
+b00000000000000000000000000100101 3
+#11000
+0.
+11
