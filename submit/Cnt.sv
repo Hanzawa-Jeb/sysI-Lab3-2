@@ -18,7 +18,7 @@ module Cnt #(
 
 reg temp_co;
 
-always @(posedge clk or negedge rstn) begin
+always @(posedge clk or negedge rstn)begin
     if (~en) begin
         temp_co <= 0;
     end else if (~rstn) begin

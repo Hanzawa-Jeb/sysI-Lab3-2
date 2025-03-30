@@ -58,7 +58,7 @@ VL_INLINE_OPT void VTestbench___024root___nba_sequent__TOP__3(VTestbench___024ro
     }
     __Vtableidx1 = (((IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__low_bits) 
                      << 3U) | (((IData)(vlSelfRef.Testbench__DOT__low_co) 
-                                << 2U) | (((IData)(vlSelfRef.Testbench__DOT__high_rst) 
+                                << 2U) | (((IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__high_reset) 
                                            << 1U) | (IData)(vlSelfRef.Testbench__DOT__rstn))));
     if ((1U & VTestbench__ConstPool__TABLE_h6429b8e3_0
          [__Vtableidx1])) {
@@ -72,10 +72,19 @@ VL_INLINE_OPT void VTestbench___024root___nba_sequent__TOP__3(VTestbench___024ro
             = VTestbench__ConstPool__TABLE_h99570713_0
             [__Vtableidx1];
     }
-    vlSelfRef.Testbench__DOT__cnt_24__DOT__global_temp_co 
-        = ((IData)(vlSelfRef.Testbench__DOT__rstn) 
-           && ((3U == ((IData)(1U) + (IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__low_bits))) 
-               & (2U == (IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__high_bits))));
+    if (vlSelfRef.Testbench__DOT__rstn) {
+        if (VL_UNLIKELY((((2U == ((IData)(1U) + (IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__high_bits))) 
+                          & (3U == ((IData)(1U) + (IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__low_bits))))))) {
+            VL_WRITEF_NX("global carry!\n",0);
+            vlSelfRef.Testbench__DOT__cnt_24__DOT__global_temp_co = 1U;
+        } else {
+            vlSelfRef.Testbench__DOT__cnt_24__DOT__global_temp_co = 0U;
+        }
+    } else {
+        vlSelfRef.Testbench__DOT__cnt_24__DOT__global_temp_co = 0U;
+    }
+    VL_WRITEF_NX("%2# %2#\n",0,4,vlSelfRef.Testbench__DOT__cnt_24__DOT__high_bits,
+                 4,(IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__low_bits));
     vlSelfRef.Testbench__DOT__cnt_24__DOT__low_bits 
         = vlSelfRef.__Vdly__Testbench__DOT__cnt_24__DOT__low_bits;
 }
