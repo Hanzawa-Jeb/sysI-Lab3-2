@@ -45,7 +45,7 @@ VTestbench__Syms::VTestbench__Syms(VerilatedContext* contextp, const char* namep
     , TOP____024unit{this, Verilated::catName(namep, "$unit")}
 {
         // Check resources
-        Verilated::stackCheck(38);
+        Verilated::stackCheck(31);
     // Configure time unit / time precision
     _vm_contextp__->timeunit(-9);
     _vm_contextp__->timeprecision(-11);

@@ -61,33 +61,15 @@ VL_INLINE_OPT VlCoroutine VTestbench___024root___eval_initial__TOP__Vtiming__1(V
     }
 }
 
-void VTestbench___024root___act_sequent__TOP__0(VTestbench___024root* vlSelf);
-
 void VTestbench___024root___eval_act(VTestbench___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    VTestbench___024root___eval_act\n"); );
     VTestbench__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
-    // Body
-    if ((8ULL & vlSelfRef.__VactTriggered.word(0U))) {
-        VTestbench___024root___act_sequent__TOP__0(vlSelf);
-    }
-}
-
-VL_INLINE_OPT void VTestbench___024root___act_sequent__TOP__0(VTestbench___024root* vlSelf) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+    VTestbench___024root___act_sequent__TOP__0\n"); );
-    VTestbench__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    auto& vlSelfRef = std::ref(*vlSelf).get();
-    // Body
-    vlSelfRef.Testbench__DOT__cnt_24__DOT__high_reset 
-        = ((IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__global_temp_co) 
-           | (IData)(vlSelfRef.Testbench__DOT__high_rst));
 }
 
 void VTestbench___024root___nba_sequent__TOP__0(VTestbench___024root* vlSelf);
 void VTestbench___024root___nba_sequent__TOP__1(VTestbench___024root* vlSelf);
 void VTestbench___024root___nba_sequent__TOP__2(VTestbench___024root* vlSelf);
-void VTestbench___024root___nba_sequent__TOP__3(VTestbench___024root* vlSelf);
-void VTestbench___024root___nba_sequent__TOP__4(VTestbench___024root* vlSelf);
 
 void VTestbench___024root___eval_nba(VTestbench___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    VTestbench___024root___eval_nba\n"); );
@@ -100,57 +82,34 @@ void VTestbench___024root___eval_nba(VTestbench___024root* vlSelf) {
     if ((1ULL & vlSelfRef.__VnbaTriggered.word(0U))) {
         VTestbench___024root___nba_sequent__TOP__1(vlSelf);
     }
-    if ((5ULL & vlSelfRef.__VnbaTriggered.word(0U))) {
-        VTestbench___024root___nba_sequent__TOP__2(vlSelf);
-    }
     if ((6ULL & vlSelfRef.__VnbaTriggered.word(0U))) {
-        VTestbench___024root___nba_sequent__TOP__3(vlSelf);
+        VTestbench___024root___nba_sequent__TOP__2(vlSelf);
         vlSelfRef.__Vm_traceActivity[3U] = 1U;
-    }
-    if ((5ULL & vlSelfRef.__VnbaTriggered.word(0U))) {
-        VTestbench___024root___nba_sequent__TOP__4(vlSelf);
-    }
-    if ((0xeULL & vlSelfRef.__VnbaTriggered.word(0U))) {
-        VTestbench___024root___act_sequent__TOP__0(vlSelf);
-    }
-}
-
-VL_INLINE_OPT void VTestbench___024root___nba_sequent__TOP__0(VTestbench___024root* vlSelf) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+    VTestbench___024root___nba_sequent__TOP__0\n"); );
-    VTestbench__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    auto& vlSelfRef = std::ref(*vlSelf).get();
-    // Body
-    vlSelfRef.__Vdly__Testbench__DOT__cnt_24__DOT__low_bits 
-        = vlSelfRef.Testbench__DOT__cnt_24__DOT__low_bits;
-}
-
-VL_INLINE_OPT void VTestbench___024root___nba_sequent__TOP__1(VTestbench___024root* vlSelf) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+    VTestbench___024root___nba_sequent__TOP__1\n"); );
-    VTestbench__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
-    auto& vlSelfRef = std::ref(*vlSelf).get();
-    // Body
-    if (VL_UNLIKELY((vlSelfRef.Testbench__DOT__error))) {
-        VL_WRITEF_NX("fail!!!\n",0);
     }
 }
 
 extern const VlUnpacked<CData/*1:0*/, 128> VTestbench__ConstPool__TABLE_h6429b8e3_0;
 extern const VlUnpacked<CData/*3:0*/, 128> VTestbench__ConstPool__TABLE_he92775c2_0;
 extern const VlUnpacked<CData/*0:0*/, 128> VTestbench__ConstPool__TABLE_h99570713_0;
+extern const VlUnpacked<CData/*3:0*/, 128> VTestbench__ConstPool__TABLE_hd94a637b_0;
 
-VL_INLINE_OPT void VTestbench___024root___nba_sequent__TOP__2(VTestbench___024root* vlSelf) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+    VTestbench___024root___nba_sequent__TOP__2\n"); );
+VL_INLINE_OPT void VTestbench___024root___nba_sequent__TOP__0(VTestbench___024root* vlSelf) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    VTestbench___024root___nba_sequent__TOP__0\n"); );
     VTestbench__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Init
+    CData/*6:0*/ __Vtableidx1;
+    __Vtableidx1 = 0;
     CData/*6:0*/ __Vtableidx2;
     __Vtableidx2 = 0;
     // Body
+    vlSelfRef.__Vdly__Testbench__DOT__cnt_24__DOT__low_bits 
+        = vlSelfRef.Testbench__DOT__cnt_24__DOT__low_bits;
     vlSelfRef.__Vdly__Testbench__DOT__cnt_24__DOT__high_bits 
         = vlSelfRef.Testbench__DOT__cnt_24__DOT__high_bits;
     __Vtableidx2 = (((IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__high_bits) 
                      << 3U) | (((IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__LOW_CNT__DOT__temp_co) 
-                                << 2U) | (((IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__high_reset) 
+                                << 2U) | (((IData)(vlSelfRef.Testbench__DOT__high_rst) 
                                            << 1U) | (IData)(vlSelfRef.Testbench__DOT__rstn))));
     if ((1U & VTestbench__ConstPool__TABLE_h6429b8e3_0
          [__Vtableidx2])) {
@@ -164,15 +123,32 @@ VL_INLINE_OPT void VTestbench___024root___nba_sequent__TOP__2(VTestbench___024ro
             = VTestbench__ConstPool__TABLE_h99570713_0
             [__Vtableidx2];
     }
+    __Vtableidx1 = (((IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__low_bits) 
+                     << 3U) | (((IData)(vlSelfRef.Testbench__DOT__low_co) 
+                                << 2U) | (((IData)(vlSelfRef.Testbench__DOT__high_rst) 
+                                           << 1U) | (IData)(vlSelfRef.Testbench__DOT__rstn))));
+    if ((1U & VTestbench__ConstPool__TABLE_h6429b8e3_0
+         [__Vtableidx1])) {
+        vlSelfRef.__Vdly__Testbench__DOT__cnt_24__DOT__low_bits 
+            = VTestbench__ConstPool__TABLE_hd94a637b_0
+            [__Vtableidx1];
+    }
+    if ((2U & VTestbench__ConstPool__TABLE_h6429b8e3_0
+         [__Vtableidx1])) {
+        vlSelfRef.Testbench__DOT__cnt_24__DOT__LOW_CNT__DOT__temp_co 
+            = VTestbench__ConstPool__TABLE_h99570713_0
+            [__Vtableidx1];
+    }
 }
 
-VL_INLINE_OPT void VTestbench___024root___nba_sequent__TOP__4(VTestbench___024root* vlSelf) {
-    VL_DEBUG_IF(VL_DBG_MSGF("+    VTestbench___024root___nba_sequent__TOP__4\n"); );
+VL_INLINE_OPT void VTestbench___024root___nba_sequent__TOP__1(VTestbench___024root* vlSelf) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    VTestbench___024root___nba_sequent__TOP__1\n"); );
     VTestbench__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
-    vlSelfRef.Testbench__DOT__cnt_24__DOT__high_bits 
-        = vlSelfRef.__Vdly__Testbench__DOT__cnt_24__DOT__high_bits;
+    if (VL_UNLIKELY((vlSelfRef.Testbench__DOT__error))) {
+        VL_WRITEF_NX("fail!!!\n",0);
+    }
 }
 
 void VTestbench___024root___timing_resume(VTestbench___024root* vlSelf) {
