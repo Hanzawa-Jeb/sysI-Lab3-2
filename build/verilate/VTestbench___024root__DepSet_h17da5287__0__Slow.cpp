@@ -155,8 +155,8 @@ VL_ATTR_COLD void VTestbench___024root___ctor_var_reset(VTestbench___024root* vl
     vlSelf->Testbench__DOT__cnt_24__DOT__low_bits = VL_RAND_RESET_I(4);
     vlSelf->Testbench__DOT__cnt_24__DOT__high_bits = VL_RAND_RESET_I(4);
     vlSelf->Testbench__DOT__cnt_24__DOT____Vcellinp__HIGH_CNT__high_rst = VL_RAND_RESET_I(1);
-    vlSelf->Testbench__DOT__cnt_24__DOT__LOW_CNT__DOT__temp_co = VL_RAND_RESET_I(1);
     vlSelf->Testbench__DOT__cnt_24__DOT__HIGH_CNT__DOT__temp_co = VL_RAND_RESET_I(1);
+    vlSelf->Testbench__DOT__cnt_24__DOT__LOW_CNT__DOT__temp_co = VL_RAND_RESET_I(1);
     vlSelf->__Vdly__Testbench__DOT__cnt_24__DOT__low_bits = VL_RAND_RESET_I(4);
     vlSelf->__Vdly__Testbench__DOT__cnt_24__DOT__high_bits = VL_RAND_RESET_I(4);
     vlSelf->__Vtrigprevexpr___TOP__Testbench__DOT__clk__0 = VL_RAND_RESET_I(1);

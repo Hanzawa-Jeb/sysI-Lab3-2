@@ -31,16 +31,6 @@ reg global_temp_co;
 reg [3:0] low_bits;
 reg [3:0] high_bits;
 
-Cnt #(.BASE(LOW_BASE), .INITIAL(LOW_INIT)) LOW_CNT(
-    .en(en),
-    .clk(clk),
-    .rstn(rstn),
-    .low_co(low_co),
-    .high_rst(high_rst | global_temp_co),
-    .co(low_bits_carry),
-    .cnt(low_bits)
-);
-
 Cnt #(.BASE(HIGH_BASE), .INITIAL(HIGH_INIT)) HIGH_CNT(
     .en(en),
     .clk(~clk),
@@ -51,12 +41,24 @@ Cnt #(.BASE(HIGH_BASE), .INITIAL(HIGH_INIT)) HIGH_CNT(
     .cnt(high_bits)
 );
 
+Cnt #(.BASE(LOW_BASE), .INITIAL(LOW_INIT)) LOW_CNT(
+    .en(en),
+    .clk(clk),
+    .rstn(rstn),
+    .low_co(low_co),
+    .high_rst(high_rst | global_temp_co),
+    .co(low_bits_carry),
+    .cnt(low_bits)
+);
+
+
+
 always @(posedge clk or negedge rstn) begin
     if (~rstn) begin
         global_temp_co <= 0;
     end else if ((low_bits + 1 == LOW_CO[3:0]) && (high_bits == HIGH_CO[3:0])) begin
         global_temp_co <= 1;
-        $display("Global Carry Generated");
+        $display("Global Carry Generated %d", low_bits);
     end else begin
         global_temp_co <= 0;
     end

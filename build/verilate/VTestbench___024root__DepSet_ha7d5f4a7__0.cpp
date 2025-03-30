@@ -45,8 +45,8 @@ VL_INLINE_OPT void VTestbench___024root___nba_sequent__TOP__3(VTestbench___024ro
     // Init
     IData/*31:0*/ __Vfunc_cnt_judge__1__Vfuncout;
     __Vfunc_cnt_judge__1__Vfuncout = 0;
-    CData/*6:0*/ __Vtableidx1;
-    __Vtableidx1 = 0;
+    CData/*6:0*/ __Vtableidx2;
+    __Vtableidx2 = 0;
     // Body
     if (vlSelfRef.Testbench__DOT__rstn) {
         vlSelfRef.Testbench__DOT__error = (1U != ([&]() {
@@ -56,26 +56,27 @@ VL_INLINE_OPT void VTestbench___024root___nba_sequent__TOP__3(VTestbench___024ro
                                                                                 | (IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__low_bits)), 0x18U, 0x10U, __Vfunc_cnt_judge__1__Vfuncout);
                 }(), __Vfunc_cnt_judge__1__Vfuncout));
     }
-    __Vtableidx1 = (((IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__low_bits) 
+    __Vtableidx2 = (((IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__low_bits) 
                      << 3U) | (((IData)(vlSelfRef.Testbench__DOT__low_co) 
                                 << 2U) | (((IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT____Vcellinp__HIGH_CNT__high_rst) 
                                            << 1U) | (IData)(vlSelfRef.Testbench__DOT__rstn))));
     if ((1U & VTestbench__ConstPool__TABLE_h6429b8e3_0
-         [__Vtableidx1])) {
+         [__Vtableidx2])) {
         vlSelfRef.__Vdly__Testbench__DOT__cnt_24__DOT__low_bits 
             = VTestbench__ConstPool__TABLE_hd94a637b_0
-            [__Vtableidx1];
+            [__Vtableidx2];
     }
     if ((2U & VTestbench__ConstPool__TABLE_h6429b8e3_0
-         [__Vtableidx1])) {
+         [__Vtableidx2])) {
         vlSelfRef.Testbench__DOT__cnt_24__DOT__LOW_CNT__DOT__temp_co 
             = VTestbench__ConstPool__TABLE_h99570713_0
-            [__Vtableidx1];
+            [__Vtableidx2];
     }
     if (vlSelfRef.Testbench__DOT__rstn) {
         if (VL_UNLIKELY((((3U == ((IData)(1U) + (IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__low_bits))) 
                           & (2U == (IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__high_bits)))))) {
-            VL_WRITEF_NX("Global Carry Generated\n",0);
+            VL_WRITEF_NX("Global Carry Generated %2#\n",0,
+                         4,vlSelfRef.Testbench__DOT__cnt_24__DOT__low_bits);
             vlSelfRef.Testbench__DOT__cnt_24__DOT__global_temp_co = 1U;
         } else {
             vlSelfRef.Testbench__DOT__cnt_24__DOT__global_temp_co = 0U;

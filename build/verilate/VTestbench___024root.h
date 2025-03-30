@@ -27,8 +27,8 @@ class alignas(VL_CACHE_LINE_BYTES) VTestbench___024root final : public Verilated
     CData/*3:0*/ Testbench__DOT__cnt_24__DOT__low_bits;
     CData/*3:0*/ Testbench__DOT__cnt_24__DOT__high_bits;
     CData/*0:0*/ Testbench__DOT__cnt_24__DOT____Vcellinp__HIGH_CNT__high_rst;
-    CData/*0:0*/ Testbench__DOT__cnt_24__DOT__LOW_CNT__DOT__temp_co;
     CData/*0:0*/ Testbench__DOT__cnt_24__DOT__HIGH_CNT__DOT__temp_co;
+    CData/*0:0*/ Testbench__DOT__cnt_24__DOT__LOW_CNT__DOT__temp_co;
     CData/*3:0*/ __Vdly__Testbench__DOT__cnt_24__DOT__low_bits;
     CData/*3:0*/ __Vdly__Testbench__DOT__cnt_24__DOT__high_bits;
     CData/*0:0*/ __VstlFirstIteration;
