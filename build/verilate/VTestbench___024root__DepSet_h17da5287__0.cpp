@@ -61,10 +61,26 @@ VL_INLINE_OPT VlCoroutine VTestbench___024root___eval_initial__TOP__Vtiming__1(V
     }
 }
 
+void VTestbench___024root___act_sequent__TOP__0(VTestbench___024root* vlSelf);
+
 void VTestbench___024root___eval_act(VTestbench___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    VTestbench___024root___eval_act\n"); );
     VTestbench__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
     auto& vlSelfRef = std::ref(*vlSelf).get();
+    // Body
+    if ((8ULL & vlSelfRef.__VactTriggered.word(0U))) {
+        VTestbench___024root___act_sequent__TOP__0(vlSelf);
+    }
+}
+
+VL_INLINE_OPT void VTestbench___024root___act_sequent__TOP__0(VTestbench___024root* vlSelf) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    VTestbench___024root___act_sequent__TOP__0\n"); );
+    VTestbench__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    auto& vlSelfRef = std::ref(*vlSelf).get();
+    // Body
+    vlSelfRef.Testbench__DOT__cnt_24__DOT____Vcellinp__HIGH_CNT__high_rst 
+        = ((IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__global_temp_co) 
+           | (IData)(vlSelfRef.Testbench__DOT__high_rst));
 }
 
 void VTestbench___024root___nba_sequent__TOP__0(VTestbench___024root* vlSelf);
@@ -93,6 +109,9 @@ void VTestbench___024root___eval_nba(VTestbench___024root* vlSelf) {
     }
     if ((5ULL & vlSelfRef.__VnbaTriggered.word(0U))) {
         VTestbench___024root___nba_sequent__TOP__4(vlSelf);
+    }
+    if ((0xeULL & vlSelfRef.__VnbaTriggered.word(0U))) {
+        VTestbench___024root___act_sequent__TOP__0(vlSelf);
     }
 }
 
@@ -131,7 +150,7 @@ VL_INLINE_OPT void VTestbench___024root___nba_sequent__TOP__2(VTestbench___024ro
         = vlSelfRef.Testbench__DOT__cnt_24__DOT__high_bits;
     __Vtableidx2 = (((IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__high_bits) 
                      << 3U) | (((IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__LOW_CNT__DOT__temp_co) 
-                                << 2U) | (((IData)(vlSelfRef.Testbench__DOT__high_rst) 
+                                << 2U) | (((IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT____Vcellinp__HIGH_CNT__high_rst) 
                                            << 1U) | (IData)(vlSelfRef.Testbench__DOT__rstn))));
     if ((1U & VTestbench__ConstPool__TABLE_h6429b8e3_0
          [__Vtableidx2])) {

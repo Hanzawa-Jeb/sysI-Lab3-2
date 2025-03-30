@@ -36,7 +36,7 @@ Cnt #(.BASE(LOW_BASE), .INITIAL(LOW_INIT)) LOW_CNT(
     .clk(clk),
     .rstn(rstn),
     .low_co(low_co),
-    .high_rst(high_rst),
+    .high_rst(high_rst | global_temp_co),
     .co(low_bits_carry),
     .cnt(low_bits)
 );
@@ -46,7 +46,7 @@ Cnt #(.BASE(HIGH_BASE), .INITIAL(HIGH_INIT)) HIGH_CNT(
     .clk(~clk),
     .rstn(rstn),
     .low_co(low_bits_carry),
-    .high_rst(high_rst),
+    .high_rst(high_rst | global_temp_co),
     .co(),
     .cnt(high_bits)
 );

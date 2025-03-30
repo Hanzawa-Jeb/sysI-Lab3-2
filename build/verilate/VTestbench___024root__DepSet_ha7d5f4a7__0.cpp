@@ -58,7 +58,7 @@ VL_INLINE_OPT void VTestbench___024root___nba_sequent__TOP__3(VTestbench___024ro
     }
     __Vtableidx1 = (((IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__low_bits) 
                      << 3U) | (((IData)(vlSelfRef.Testbench__DOT__low_co) 
-                                << 2U) | (((IData)(vlSelfRef.Testbench__DOT__high_rst) 
+                                << 2U) | (((IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT____Vcellinp__HIGH_CNT__high_rst) 
                                            << 1U) | (IData)(vlSelfRef.Testbench__DOT__rstn))));
     if ((1U & VTestbench__ConstPool__TABLE_h6429b8e3_0
          [__Vtableidx1])) {

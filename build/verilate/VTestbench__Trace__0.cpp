@@ -45,8 +45,9 @@ void VTestbench___024root__trace_chg_0_sub_0(VTestbench___024root* vlSelf, Veril
                               << 4U) | (IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__low_bits))),8);
     bufp->chgCData(oldp+13,(vlSelfRef.Testbench__DOT__cnt_24__DOT__high_bits),4);
     bufp->chgBit(oldp+14,((1U & (~ (IData)(vlSelfRef.Testbench__DOT__clk)))));
-    bufp->chgBit(oldp+15,(vlSelfRef.Testbench__DOT__cnt_24__DOT__HIGH_CNT__DOT__temp_co));
-    bufp->chgIData(oldp+16,((((IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__high_bits) 
+    bufp->chgBit(oldp+15,(vlSelfRef.Testbench__DOT__cnt_24__DOT____Vcellinp__HIGH_CNT__high_rst));
+    bufp->chgBit(oldp+16,(vlSelfRef.Testbench__DOT__cnt_24__DOT__HIGH_CNT__DOT__temp_co));
+    bufp->chgIData(oldp+17,((((IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__high_bits) 
                               << 4U) | (IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__low_bits))),32);
 }
 
