@@ -35,18 +35,19 @@ void VTestbench___024root__trace_chg_0_sub_0(VTestbench___024root* vlSelf, Veril
     }
     if (VL_UNLIKELY((vlSelfRef.__Vm_traceActivity[3U]))) {
         bufp->chgBit(oldp+6,(vlSelfRef.Testbench__DOT__cnt_24__DOT__global_temp_co));
-        bufp->chgCData(oldp+7,((((IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__high_bits) 
-                                 << 4U) | (IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__low_bits))),8);
-        bufp->chgBit(oldp+8,(vlSelfRef.Testbench__DOT__error));
+        bufp->chgBit(oldp+7,(vlSelfRef.Testbench__DOT__error));
+        bufp->chgBit(oldp+8,(vlSelfRef.Testbench__DOT__cnt_24__DOT__LOW_CNT__DOT__temp_co));
         bufp->chgCData(oldp+9,(vlSelfRef.Testbench__DOT__cnt_24__DOT__low_bits),4);
-        bufp->chgCData(oldp+10,(vlSelfRef.Testbench__DOT__cnt_24__DOT__high_bits),4);
-        bufp->chgIData(oldp+11,(vlSelfRef.Testbench__DOT__cnt_24__DOT__global_temp_co),32);
-        bufp->chgIData(oldp+12,((((IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__high_bits) 
-                                  << 4U) | (IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__low_bits))),32);
+        bufp->chgIData(oldp+10,(vlSelfRef.Testbench__DOT__cnt_24__DOT__global_temp_co),32);
     }
-    bufp->chgBit(oldp+13,(vlSelfRef.Testbench__DOT__clk));
-    bufp->chgBit(oldp+14,(vlSelfRef.Testbench__DOT__cnt_24__DOT__LOW_CNT__DOT__temp_co));
+    bufp->chgBit(oldp+11,(vlSelfRef.Testbench__DOT__clk));
+    bufp->chgCData(oldp+12,((((IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__high_bits) 
+                              << 4U) | (IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__low_bits))),8);
+    bufp->chgCData(oldp+13,(vlSelfRef.Testbench__DOT__cnt_24__DOT__high_bits),4);
+    bufp->chgBit(oldp+14,((1U & (~ (IData)(vlSelfRef.Testbench__DOT__clk)))));
     bufp->chgBit(oldp+15,(vlSelfRef.Testbench__DOT__cnt_24__DOT__HIGH_CNT__DOT__temp_co));
+    bufp->chgIData(oldp+16,((((IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__high_bits) 
+                              << 4U) | (IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__low_bits))),32);
 }
 
 void VTestbench___024root__trace_cleanup(void* voidSelf, VerilatedVcd* /*unused*/) {

@@ -56,6 +56,7 @@ always @(posedge clk or negedge rstn) begin
         global_temp_co <= 0;
     end else if ((low_bits + 1 == LOW_CO[3:0]) && (high_bits == HIGH_CO[3:0])) begin
         global_temp_co <= 1;
+        $display("Global Carry Generated");
     end else begin
         global_temp_co <= 0;
     end
