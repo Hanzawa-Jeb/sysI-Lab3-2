@@ -64,7 +64,8 @@ VL_ATTR_COLD void VTestbench___024root___dump_triggers__stl(VTestbench___024root
 }
 #endif  // VL_DEBUG
 
-void VTestbench___024root___act_sequent__TOP__0(VTestbench___024root* vlSelf);
+VL_ATTR_COLD void VTestbench___024root___stl_sequent__TOP__0(VTestbench___024root* vlSelf);
+VL_ATTR_COLD void VTestbench___024root____Vm_traceActivitySetAll(VTestbench___024root* vlSelf);
 
 VL_ATTR_COLD void VTestbench___024root___eval_stl(VTestbench___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    VTestbench___024root___eval_stl\n"); );
@@ -72,8 +73,21 @@ VL_ATTR_COLD void VTestbench___024root___eval_stl(VTestbench___024root* vlSelf) 
     auto& vlSelfRef = std::ref(*vlSelf).get();
     // Body
     if ((1ULL & vlSelfRef.__VstlTriggered.word(0U))) {
-        VTestbench___024root___act_sequent__TOP__0(vlSelf);
+        VTestbench___024root___stl_sequent__TOP__0(vlSelf);
+        VTestbench___024root____Vm_traceActivitySetAll(vlSelf);
     }
+}
+
+VL_ATTR_COLD void VTestbench___024root___stl_sequent__TOP__0(VTestbench___024root* vlSelf) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    VTestbench___024root___stl_sequent__TOP__0\n"); );
+    VTestbench__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    auto& vlSelfRef = std::ref(*vlSelf).get();
+    // Body
+    vlSelfRef.Testbench__DOT__co = ((3U == (IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__low_bits)) 
+                                    & (2U == (IData)(vlSelfRef.Testbench__DOT__cnt_24__DOT__high_bits)));
+    vlSelfRef.Testbench__DOT__cnt_24__DOT____Vcellinp__HIGH_CNT__high_rst 
+        = ((IData)(vlSelfRef.Testbench__DOT__high_rst) 
+           | (IData)(vlSelfRef.Testbench__DOT__co));
 }
 
 VL_ATTR_COLD void VTestbench___024root___eval_triggers__stl(VTestbench___024root* vlSelf);
@@ -141,6 +155,17 @@ VL_ATTR_COLD void VTestbench___024root___dump_triggers__nba(VTestbench___024root
 }
 #endif  // VL_DEBUG
 
+VL_ATTR_COLD void VTestbench___024root____Vm_traceActivitySetAll(VTestbench___024root* vlSelf) {
+    VL_DEBUG_IF(VL_DBG_MSGF("+    VTestbench___024root____Vm_traceActivitySetAll\n"); );
+    VTestbench__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
+    auto& vlSelfRef = std::ref(*vlSelf).get();
+    // Body
+    vlSelfRef.__Vm_traceActivity[0U] = 1U;
+    vlSelfRef.__Vm_traceActivity[1U] = 1U;
+    vlSelfRef.__Vm_traceActivity[2U] = 1U;
+    vlSelfRef.__Vm_traceActivity[3U] = 1U;
+}
+
 VL_ATTR_COLD void VTestbench___024root___ctor_var_reset(VTestbench___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    VTestbench___024root___ctor_var_reset\n"); );
     VTestbench__Syms* const __restrict vlSymsp VL_ATTR_UNUSED = vlSelf->vlSymsp;
@@ -150,15 +175,13 @@ VL_ATTR_COLD void VTestbench___024root___ctor_var_reset(VTestbench___024root* vl
     vlSelf->Testbench__DOT__rstn = VL_RAND_RESET_I(1);
     vlSelf->Testbench__DOT__high_rst = VL_RAND_RESET_I(1);
     vlSelf->Testbench__DOT__low_co = VL_RAND_RESET_I(1);
+    vlSelf->Testbench__DOT__co = VL_RAND_RESET_I(1);
     vlSelf->Testbench__DOT__error = VL_RAND_RESET_I(1);
-    vlSelf->Testbench__DOT__cnt_24__DOT__global_temp_co = VL_RAND_RESET_I(1);
     vlSelf->Testbench__DOT__cnt_24__DOT__low_bits = VL_RAND_RESET_I(4);
     vlSelf->Testbench__DOT__cnt_24__DOT__high_bits = VL_RAND_RESET_I(4);
     vlSelf->Testbench__DOT__cnt_24__DOT____Vcellinp__HIGH_CNT__high_rst = VL_RAND_RESET_I(1);
-    vlSelf->Testbench__DOT__cnt_24__DOT__HIGH_CNT__DOT__temp_co = VL_RAND_RESET_I(1);
-    vlSelf->Testbench__DOT__cnt_24__DOT__LOW_CNT__DOT__temp_co = VL_RAND_RESET_I(1);
-    vlSelf->__Vdly__Testbench__DOT__cnt_24__DOT__low_bits = VL_RAND_RESET_I(4);
     vlSelf->__Vdly__Testbench__DOT__cnt_24__DOT__high_bits = VL_RAND_RESET_I(4);
+    vlSelf->__Vdly__Testbench__DOT__cnt_24__DOT__low_bits = VL_RAND_RESET_I(4);
     vlSelf->__Vtrigprevexpr___TOP__Testbench__DOT__clk__0 = VL_RAND_RESET_I(1);
     vlSelf->__Vtrigprevexpr___TOP__Testbench__DOT__rstn__0 = VL_RAND_RESET_I(1);
     for (int __Vi0 = 0; __Vi0 < 4; ++__Vi0) {

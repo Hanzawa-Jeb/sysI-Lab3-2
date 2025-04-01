@@ -26,17 +26,15 @@ module Cnt2num #(
 
 wire low_bits_carry; 
 //storing the carry value of lower bits
-reg global_temp_co;
-//storing temporary global carry value
 reg [3:0] low_bits;
 reg [3:0] high_bits;
 
 Cnt #(.BASE(HIGH_BASE), .INITIAL(HIGH_INIT)) HIGH_CNT(
     .en(en),
-    .clk(~clk),
+    .clk(clk),
     .rstn(rstn),
     .low_co(low_bits_carry),
-    .high_rst(high_rst | global_temp_co),
+    .high_rst(high_rst | co),
     .co(),
     .cnt(high_bits)
 );
@@ -46,25 +44,22 @@ Cnt #(.BASE(LOW_BASE), .INITIAL(LOW_INIT)) LOW_CNT(
     .clk(clk),
     .rstn(rstn),
     .low_co(low_co),
-    .high_rst(high_rst | global_temp_co),
+    .high_rst(high_rst | co),
     .co(low_bits_carry),
     .cnt(low_bits)
 );
 
+//always @(posedge clk or negedge rstn) begin
+//    if (~rstn) begin
+//        global_temp_co <= 0;
+//    end else if ((low_bits + 1 == LOW_CO[3:0]) && (high_bits == HIGH_CO[3:0])) begin
+//        global_temp_co <= 1;
+//    end else begin
+//        global_temp_co <= 0;
+//    end
+//end
 
-
-always @(posedge clk or negedge rstn) begin
-    if (~rstn) begin
-        global_temp_co <= 0;
-    end else if ((low_bits + 1 == LOW_CO[3:0]) && (high_bits == HIGH_CO[3:0])) begin
-        global_temp_co <= 1;
-        $display("Global Carry Generated %d", low_bits);
-    end else begin
-        global_temp_co <= 0;
-    end
-end
-
-assign co = global_temp_co;
+assign co = (low_bits == LOW_CO[3:0] && high_bits == HIGH_CO[3:0]);
 assign cnt = {high_bits, low_bits};
 
 endmodule
